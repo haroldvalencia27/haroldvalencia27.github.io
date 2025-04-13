@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ce513b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.todo-app {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Input nueva tarea */
+#new-task {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* Botón agregar tarea */
+#add-task {
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+#add-task:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+/* Lista de tareas */
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de tarea */
+.task-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+/* Acciones (editar, eliminar) */
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botones */
+.task-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task-actions .edit {
+    color: #007bff;
+}
+
+.task-actions .edit:hover {
+    transform: scale(1.2);
+}
+
+.task-actions .delete {
+    color: red;
+}
+
+.task-actions .delete:hover {
+    transform: scale(1.2);
+}
+
+/* Tarea completada */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
