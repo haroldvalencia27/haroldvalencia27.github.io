@@ -55,4 +55,25 @@ function createTaskElement(taskContent, completed) {
     taskList.appendChild(li);
 }
 
+function saveTask(taskContent, completed) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push({ content: taskContent, completed: completed });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
+function editTask(span, oldContent) {
+    const newContent = prompt("Editar tarea:", oldContent);
+    if (newContent && newContent.trim() !== "") {
+        span.textContent = newContent;
+        updateTask(oldContent, newContent);
+    }
+}
+
+function updateTask(oldContent, newContent) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    let taskIndex = tasks.findIndex(task => task.content === oldContent);
+    if (taskIndex !== -1) {
+        tasks[taskIndex].content = newContent;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+}
