@@ -77,3 +77,19 @@ function updateTask(oldContent, newContent) {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 }
+function toggleTaskCompletion(checkbox, taskContent, li) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const taskIndex = tasks.findIndex(task => task.content === taskContent);
+    if (taskIndex !== -1) {
+        tasks[taskIndex].completed = checkbox.checked;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+    li.querySelector("span").classList.toggle("completed");
+}
+
+function removeTask(li, taskContent) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const updatedTasks = tasks.filter(task => task.content !== taskContent);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    li.remove();
+}
